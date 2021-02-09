@@ -31,7 +31,7 @@ public class ContaCorrente extends ContaBancaria implements Imprimivel {
 			setSaldo(mov);
 			System.out.println( "Operação realizada com sucesso!!");
 		
-		}else if (getSaldo()>=valor+limite){
+		}else if (getSaldo()+limite>=valor){
 			double mov = getSaldo()-valor;
 			limite -= valor - getSaldo();
 			setSaldo(mov);

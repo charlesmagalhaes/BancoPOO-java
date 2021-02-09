@@ -14,7 +14,7 @@ public class Program {
 		
 		cc.depositar(500);
 		
-		cc.sacar(800);
+		cc.sacar(1600);
 		
 		cp.depositar(200);
 		
@@ -25,6 +25,12 @@ public class Program {
 		relatorio.gerarRelatorio(cp);
 		
 		relatorio.gerarRelatorio(cc);
+		
+		cc.transferir(500, cp);
+		
+		relatorio.gerarRelatorio(cp);
+		relatorio.gerarRelatorio(cc);
+
 
 	}
 

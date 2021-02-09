@@ -30,6 +30,13 @@ public abstract class ContaBancaria {
 		this.saldo = saldo;
 	}
 	
+	public void transferir(double valor, ContaBancaria conta) {
+		
+		conta.sacar(valor);
+		conta.depositar(valor);
+		
+	}
+	
 	public abstract void sacar(double valor);
 	
 	public abstract void depositar(double valor);
