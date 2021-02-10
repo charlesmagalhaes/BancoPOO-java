@@ -31,10 +31,13 @@ public abstract class ContaBancaria {
 	}
 	
 	public void transferir(double valor, ContaBancaria conta) {
+		sacar(valor);
 		
-		conta.sacar(valor);
-		conta.depositar(valor);
-		
+		if(getSaldo()>=valor || getSaldo()+500>=valor) {
+			conta.depositar(valor);
+		}else {
+			System.out.println("Transferencia não realizada");
+		}
 	}
 	
 	public abstract void sacar(double valor);

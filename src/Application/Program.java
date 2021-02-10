@@ -26,7 +26,7 @@ public class Program {
 		
 		relatorio.gerarRelatorio(cc);
 		
-		cc.transferir(500, cp);
+		cc.transferir(100, cp);
 		
 		relatorio.gerarRelatorio(cp);
 		relatorio.gerarRelatorio(cc);
