@@ -10,12 +10,12 @@ public class Banco implements Imprimivel {
 	
 	public void inserir(ContaBancaria conta) {		
 		list.add(conta);
-		
+		System.out.println("Conta adicionada com sucesso!");
 	}
 	
 	public void remover(ContaBancaria conta) {		
 		list.remove(conta);
-		
+		System.out.println("Conta removida com sucesso!");
 	}
 	
 	public ContaBancaria procurarConta(Integer numConta) {		
