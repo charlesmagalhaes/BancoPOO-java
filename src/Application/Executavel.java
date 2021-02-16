@@ -83,18 +83,17 @@ public class Executavel {
 				   System.out.println("Essa conta não existe no banco de dados");
 				   
 			   }else {
-				   System.out.println("Conta Encontrada");
+				   System.out.println("----------MENU---------------------------------------------");
+				   System.out.println("	a: Depositar");
+				   System.out.println("	b: Sacar");
+				   System.out.println("	c: Transferir");
+				   System.out.println("	d: Gerar Relatório");
+				   System.out.println("	e: Gerar Relatório");
+				   System.out.println("-------------------------------------------------------");
+				   System.out.print("Informe a operação desejada conforme acima: a, b, c, d ou e: ");
+				   		
 			   }
-				
-				//for (Banco i : cliente ) {
-				//	if (i.getNumConta() == numConta) {
-				//		return i;
-						
-				//	}
-				//}
-				
-				
-				
+							
 				break;
 			case 3: 
 				
@@ -104,6 +103,8 @@ public class Executavel {
 				
 				cliente.remover(cliente.procurarConta(contaR));
 				
+				sc.next();
+				break;
 				
 			case 4: 
 				
@@ -111,20 +112,22 @@ public class Executavel {
 				System.out.println("Contas cadastradas: ");
 				cliente.mostrarDados();
 				System.out.println();
+				
+				System.out.println("Clique enter para proseguir");
+				sc.next();
 				break;
 			case 5: 
 				
 				opMenu = 'n';
+				System.out.println("O Sistema fechado!! ");
 				break;
 	
 			
 			default:
+				System.out.println("Opção digitada é invalida!");
 				
 			}
 			
-			//System.out.println("Deseja realizar outra operação? s/n :");
-			
-			//opMenu = sc.next().charAt(0);
 			
 		} while(opMenu == 's');
 		

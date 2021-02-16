@@ -20,7 +20,7 @@ public class Banco implements Imprimivel {
 	
 	public ContaBancaria procurarConta(Integer numConta) {		
 		for (ContaBancaria i : list ) {
-			if (i.getNumConta() == numConta) {
+			if (i.getNumConta().equals(numConta)) {
 				return i;
 				
 			}
