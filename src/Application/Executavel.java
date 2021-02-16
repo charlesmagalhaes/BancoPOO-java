@@ -91,7 +91,26 @@ public class Executavel {
 				   System.out.println("	e: Gerar Relatório");
 				   System.out.println("-------------------------------------------------------");
 				   System.out.print("Informe a operação desejada conforme acima: a, b, c, d ou e: ");
-				   		
+				   char opcaoSubMenu = sc.next().charAt(0);
+				   switch (opcaoSubMenu) {
+				   
+						case 'a': 
+							System.out.print("Digite o valor a ser depositado: ");
+							double valorParaDeposito = sc.nextDouble();
+							
+							
+							break;
+						case 'b': 
+							break;
+						case 'c': 
+							break;
+						case 'd': 
+							break;
+						case 'e': 
+							break;
+						default:
+							System.out.println("Opção digitada invalida!!!");
+				   }	
 			   }
 							
 				break;
@@ -119,7 +138,7 @@ public class Executavel {
 			case 5: 
 				
 				opMenu = 'n';
-				System.out.println("O Sistema fechado!! ");
+				System.out.println("O Sistema foi fechado!! ");
 				break;
 	
 			
