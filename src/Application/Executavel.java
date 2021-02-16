@@ -6,6 +6,8 @@ import Entities.Banco;
 import Entities.ContaBancaria;
 import Entities.ContaCorrente;
 import Entities.ContaPoupanca;
+import Entities.Imprimivel;
+import Entities.servicos.Relatorio;
 
 public class Executavel {
 	
@@ -83,34 +85,54 @@ public class Executavel {
 				   System.out.println("Essa conta não existe no banco de dados");
 				   
 			   }else {
-				   System.out.println("----------MENU---------------------------------------------");
-				   System.out.println("	a: Depositar");
-				   System.out.println("	b: Sacar");
-				   System.out.println("	c: Transferir");
-				   System.out.println("	d: Gerar Relatório");
-				   System.out.println("	e: Gerar Relatório");
-				   System.out.println("-------------------------------------------------------");
-				   System.out.print("Informe a operação desejada conforme acima: a, b, c, d ou e: ");
-				   char opcaoSubMenu = sc.next().charAt(0);
-				   switch (opcaoSubMenu) {
+				  char opSubMenu ='s';
+				   do {
+					   System.out.println("----------MENU---------------------------------------------");
+					   System.out.println("	a: Depositar");
+					   System.out.println("	b: Sacar");
+					   System.out.println("	c: Transferir");
+					   System.out.println("	d: Gerar Relatório");
+					   System.out.println("	e: Retorna ao Menu anterior");
+					   System.out.println("-------------------------------------------------------");
+					   System.out.print("Informe a operação desejada conforme acima: a, b, c, d ou e: ");
+					   char opcaoSubMenu = sc.next().charAt(0);
+					   switch (opcaoSubMenu) {
+					   
+							case 'a': 
+								System.out.print("Digite o valor a ser depositado: ");
+								double valorParaDeposito = sc.nextDouble();
+								contaEncontrada.depositar(valorParaDeposito);
+								
+								break;
+							case 'b': 
+								System.out.print("Digite o valor a ser sacado: ");
+								double valorParaSacar = sc.nextDouble();
+								contaEncontrada.sacar(valorParaSacar);
+								
+								break;
+							case 'c': 
+								System.out.print("Digite o valor a ser transferido: ");
+								double valorParaTransferir = sc.nextDouble();
+								System.out.print("Digite a conta para transferencia: ");
+								ContaBancaria contaParaTransferencia = cliente.procurarConta(sc.nextInt());
+								contaEncontrada.transferir(valorParaTransferir, contaParaTransferencia);;
+	
+								
+								break;
+							case 'd': 
+								Relatorio relatorio = new Relatorio();
+								relatorio.gerarRelatorio((Imprimivel) contaEncontrada);
+								
+								break;
+							case 'e': 
+								System.out.println("Voltando ao menu principal");
+								opSubMenu = 'n';
+								break;
+							default:
+								System.out.println("Opção digitada invalida!!!");
+					   }
 				   
-						case 'a': 
-							System.out.print("Digite o valor a ser depositado: ");
-							double valorParaDeposito = sc.nextDouble();
-							
-							
-							break;
-						case 'b': 
-							break;
-						case 'c': 
-							break;
-						case 'd': 
-							break;
-						case 'e': 
-							break;
-						default:
-							System.out.println("Opção digitada invalida!!!");
-				   }	
+				   } while(opSubMenu == 's');
 			   }
 							
 				break;

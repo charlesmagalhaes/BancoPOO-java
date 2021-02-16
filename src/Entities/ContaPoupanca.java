@@ -42,7 +42,7 @@ public class ContaPoupanca extends ContaBancaria implements Imprimivel {
 	public void depositar(double valor) {
 		double mov = getSaldo() + valor-taxaDeOperacao;
 		setSaldo(mov);
-		System.out.println("Deposito reallizado com sucesso!!!");
+		System.out.println("Deposito realizado com sucesso!!!");
 	}
 
 
