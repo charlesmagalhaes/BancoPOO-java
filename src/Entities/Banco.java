@@ -32,12 +32,12 @@ public class Banco implements Imprimivel {
 	@Override
 	public void mostrarDados() {
 		
-		//for (ContaBancaria i : list) {
+		for (ContaBancaria i : list) {
 			
-			mostrarDados();
-			//System.out.println("Numero da Conta: "+ i.getNumConta()+ " Saldo: "+i.getSaldo());
-		//}
-		//	
+			
+			System.out.println("Numero da Conta: "+ i.getNumConta()+ " Saldo: "+i.getSaldo());
+		}
+			
 	}
 	
 }
